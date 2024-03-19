@@ -21,10 +21,10 @@ const informacao: Item[] = [
     {id: "9", nome: "Fraldinha", preco: "R$ 139,00", ingredientes: "Corte muito macio do boi, entra a costela e o traseiro, com uma gordura bem distribuída, é etremamente versátil e fica incrível grelhado no fogo!" ,image: require('./assets/images/prato9.jpg')},
     {id: "10", nome: "Flat Iron", preco: "R$ 115,00", ingredientes: "Corte da paleta bovina, o flat iron é uma carne supreendentemente macia e saborosa!" ,image: require('./assets/images/prato10.jpg')},
     {id: "11", nome: "Picanha de Cordeiro", preco: "R$ 125,00", ingredientes: "O corte de maior sucesso entre os brasileiros, agora na versão cordeiro. Proveniente de animais criados nas pastagens da Patagônia Chilena. Carne macia, suculenta e saborosa." ,image: require('./assets/images/prato11.jpg')},
-    {id: "12", nome: "Teste1", preco: "R$ 35,00", ingredientes: "testes,testm,teste,tess" ,image: require('./assets/images/carne1.jpg')},
-    {id: "13", nome: "Teste1", preco: "R$ 35,00", ingredientes: "testes,testm,teste,tess" ,image: require('./assets/images/carne1.jpg')},
-    {id: "14", nome: "Teste1", preco: "R$ 35,00", ingredientes: "testes,testm,teste,tess" ,image: require('./assets/images/carne1.jpg')},
-    {id: "15", nome: "Teste1", preco: "R$ 35,00", ingredientes: "testes,testm,teste,tess" ,image: require('./assets/images/carne1.jpg')},
+    {id: "12", nome: "Costela bovina", preco: "R$ 102,00", ingredientes: "Tradicional costela bovina ao estilo gaúcho, assada por 10 horas até quase desmanchar." ,image: require('./assets/images/prato12.jpg')},
+    {id: "13", nome: "Salmão", preco: "R$ 99,00", ingredientes: "Lombo de salmão grelhado." ,image: require('./assets/images/image13.jpg')},
+    {id: "14", nome: "Filé de Tilápia", preco: "R$ 35,00", ingredientes: "testes,testm,teste,tess" ,image: require('./assets/images/image14.jpg')},
+    {id: "15", nome: "Brownie", preco: "R$ 54,00", ingredientes: "Pedaço generoso de borwnie, servido com sorvete de creme e uma calda quente de chocolate." ,image: require('./assets/images/sobremesa1.jpg')},
 ];
 const epeciais: Item[] =[
     {id: "1", nome: "Tomahawk", preco: "R$ 89,90", ingredientes: "Corte Tomahawk, porão de batar gratinadas, molho chimichurri", image: require('./assets/images/carne1.jpg')},
