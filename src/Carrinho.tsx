@@ -18,9 +18,9 @@ function Carrinho(): React.JSX.Element {
                 
             <View style={styles.body}>
                 <Text style={styles.carrinhoVazio}>Seu carrinho está vazio</Text>
-                <Image 
-                source={require('./assets/images/carrinhoVazio.png')}
-                style={styles.carrinho}/>
+            </View>
+            <View>
+                
             </View>
             
             <View style={styles.footer}>
@@ -161,15 +161,7 @@ const styles = StyleSheet.create({
         alignItems:'center',       
         marginBottom: 50    
     },
-    containerFooter: {
-        backgroundColor: 'white'
-    },
-    carrinho: {
-        backgroundColor: 'white',
-        width:100,
-        height: 100,
-        marginLeft: 'auto',
-        marginRight: 'auto'
-    }
+
+    
 })
 export default Carrinho;
