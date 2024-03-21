@@ -227,8 +227,15 @@ function FlatListCardapio(): React.JSX.Element {
                     source={require('./assets/images/menu.png')}
                     style={styles.footerIcon}/>
                 </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image 
+                    source={require('./assets/images/sacola.png')}
+                    style={styles.footerIcon}/>
+                </TouchableOpacity>
+
             </View>
         </View>
+        
     );
 }
 
@@ -313,6 +320,14 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontWeight: 'bold'
+    },
+    sacola: {
+      width:60,
+      height:60,
+      borderRadius: 50,
+      borderWidth: 1.5,
+      borderColor: 'white',
+      marginLeft: 'auto'
     }
 })
 export default FlatListCardapio;
