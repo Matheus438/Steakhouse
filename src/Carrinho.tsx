@@ -20,7 +20,9 @@ function Carrinho(): React.JSX.Element {
                 <Text style={styles.carrinhoVazio}>Seu carrinho está vazio</Text>
             </View>
             <View>
-                
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.buttonText}>Finalizar compra</Text>
+                </TouchableOpacity>
             </View>
             
             <View style={styles.footer}>
@@ -159,8 +161,26 @@ const styles = StyleSheet.create({
         alignSelf:'center',
         alignContent:'center',
         alignItems:'center',       
-        marginBottom: 50    
+            
     },
+    button:{
+        backgroundColor: 'white',
+        width:150,
+        height: 50,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginBottom: 100,
+        borderRadius: 10,
+    },
+    buttonText:{
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'black',  
+        marginTop: 10
+    }
+
 
     
 })
