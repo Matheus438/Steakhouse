@@ -4,8 +4,8 @@ import Carrinho from "./src/Carrinho";
 
 function App(): React.JSX.Element {
   return (
-    /*<FlatListCardapio />*/
-    <Carrinho />
+    <FlatListCardapio />
+    /*<Carrinho />*/
   );
 }
 

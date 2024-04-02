@@ -72,6 +72,9 @@ const renderItem2 = ({ item } : {item: Item}) =>(
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>{item.preco}</Text>
         <Image source={item.image} style={styles.image}/>
+        <TouchableOpacity style={styles.bottom}>
+            <Text style={styles.textoBotton}>Adicionar ao Carrinho</Text>
+        </TouchableOpacity>
     </View>
 )
 const renderItem3 = ({ item } : {item: Item}) =>(
@@ -82,6 +85,9 @@ const renderItem3 = ({ item } : {item: Item}) =>(
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>{item.preco}</Text>
         <Image source={item.image} style={styles.image}/>
+        <TouchableOpacity style={styles.bottom}>
+            <Text style={styles.textoBotton}>Adicionar ao Carrinho</Text>
+        </TouchableOpacity>
     </View>
 )
 const renderItem4 = ({ item } : {item: Item}) =>(
@@ -92,6 +98,9 @@ const renderItem4 = ({ item } : {item: Item}) =>(
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>{item.preco}</Text>
         <Image source={item.image} style={styles.image}/>
+        <TouchableOpacity style={styles.bottom}>
+            <Text style={styles.textoBotton}>Adicionar ao Carrinho</Text>
+        </TouchableOpacity>
     </View>
 )
 const renderItem5 = ({ item } : {item: Item}) =>(
@@ -102,6 +111,9 @@ const renderItem5 = ({ item } : {item: Item}) =>(
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>{item.preco}</Text>
         <Image source={item.image} style={styles.image}/>
+        <TouchableOpacity style={styles.bottom}>
+            <Text style={styles.textoBotton}>Adicionar ao Carrinho</Text>
+        </TouchableOpacity>
     </View>
 )
 const renderItem6 = ({ item } : {item: Item}) =>(
@@ -112,6 +124,9 @@ const renderItem6 = ({ item } : {item: Item}) =>(
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>{item.preco}</Text>
         <Image source={item.image} style={styles.image}/>
+        <TouchableOpacity style={styles.bottom}>
+            <Text style={styles.textoBotton}>Adicionar ao Carrinho</Text>
+        </TouchableOpacity>
     </View>
 )
 const renderItem7 = ({ item } : {item: Item}) =>(
@@ -122,6 +137,9 @@ const renderItem7 = ({ item } : {item: Item}) =>(
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>{item.preco}</Text>
         <Image source={item.image} style={styles.image2}/>
+        <TouchableOpacity style={styles.bottom}>
+            <Text style={styles.textoBotton}>Adicionar ao Carrinho</Text>
+        </TouchableOpacity>
     </View>
 )
 const renderItem8 = ({ item } : {item: Item}) =>(
@@ -132,6 +150,9 @@ const renderItem8 = ({ item } : {item: Item}) =>(
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>{item.preco}</Text>
         <Image source={item.image} style={styles.image3}/>
+        <TouchableOpacity style={styles.bottom}>
+            <Text style={styles.textoBotton}>Adicionar ao Carrinho</Text>
+        </TouchableOpacity>
     </View>
 )
 
@@ -156,6 +177,7 @@ function FlatListCardapio(): React.JSX.Element {
             data={especiais}
             renderItem={renderItem2}
             keyExtractor={(item) => item.id}
+
             />
 
             <Text style={styles.textEspeciais}>𝒢𝓇𝑒𝓁𝒽𝒶𝒹𝑜𝓈 𝓃𝑜 𝐹𝑜𝑔𝑜</Text>
@@ -328,6 +350,22 @@ const styles = StyleSheet.create({
       borderWidth: 1.5,
       borderColor: 'white',
       marginLeft: 'auto'
+    },
+    bottom:{
+        marginTop:20,
+        borderRadius: 5,
+
+        width:160,
+        height:40,
+        backgroundColor:'#CD5942',
+    },
+    textoBotton: {
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: 6,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'black'
     }
 })
 export default FlatListCardapio;
