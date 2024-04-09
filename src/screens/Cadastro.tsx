@@ -15,7 +15,7 @@ const CadastroCliente: React.FC = () => {
     const [password, setPassword] = useState<string>('');
     const [imagem, setImagem] = useState<any>('');
 
-    const cadastrarCliente = async () => {
+    const CadastrarCliente = async () => {
         try {
             const formData = new FormData();
             formData.append('nome', nome);
@@ -148,7 +148,7 @@ const CadastroCliente: React.FC = () => {
                 <TouchableOpacity style={styles.imageButton} onPress={abrirCamera}>
                     <Text style={styles.imageButtonText}>Tirar Foto</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.imageButton} onPress={cadastrarCliente}>
+                <TouchableOpacity style={styles.imageButton} onPress={CadastrarCliente}>
                     <Text style={styles.imageButtonText}>Cadastrar Cliente</Text>
                 </TouchableOpacity>
 
