@@ -1,21 +1,29 @@
 import React, { useState } from "react";
-import { Button, Image, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Button, Image, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { launchCamera, launchImageLibrary } from "react-native-image-picker";
 import axios from "axios";
+import { ImageBackground } from "react-native";
 
-const CadastroProduto: React.FC = () => {
-    const [produtos, setProdutos] = useState<Produto[]>([]);
+
+const CadastroCliente: React.FC = () => {
+    
     const [nome, setNome] = useState<string>('');
-    const [preco, setPreco] = useState<string>('');
-    const [ingredientes, setIngredientes] = useState<string>('');
+    const [endereco, setEndereco] = useState<string>('');
+    const [telefone, setTelefone] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [cpf, setCpf] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
     const [imagem, setImagem] = useState<any>('');
 
-    const cadastroProduto = async () => {
+    const cadastrarCliente = async () => {
         try {
             const formData = new FormData();
             formData.append('nome', nome);
-            formData.append('preco', preco);
-            formData.append('ingredientes', ingredientes);
+            formData.append('endereco', endereco);
+            formData.append('telefone', telefone);
+            formData.append('email', email);
+            formData.append('cpf', cpf);
+            formData.append('password', password);
             formData.append('imagem', {
                 uri: imagem,
                 type: 'image/jpeg',
@@ -23,11 +31,12 @@ const CadastroProduto: React.FC = () => {
             });
 
             console.log(formData)
-            const response = await axios.post('http://10.137.11.224:8001/api/produtos', formData, {
+            const response = await axios.post('http://10.137.11.224:8000/api/clientes', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
+            console.log(response.data)
         } catch (error) {
             console.log(error);
         }
@@ -78,80 +87,119 @@ const CadastroProduto: React.FC = () => {
 
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor="red" barStyle="light-content" />
+            <ScrollView>
+            <ImageBackground source={require('../assets/images/fundo.jpg')} resizeMode="cover" style={styles.image}>
+            <StatusBar backgroundColor="black" barStyle="light-content" />
             <View style={styles.header}>
-                <Text style={styles.header}>Top Food</Text>
+            <Image
+                    source={require('../assets/images/logo.jpeg')}
+                    style={styles.logo}/>
             </View>
             <View style={styles.form}>
+            <View style={styles.alinhamentoImagemSelecionada}>
+                    {imagem ? <Image source={{ uri: imagem }} style={styles.imagemSelecionada} /> : null}
+                </View>
+                
                 <TextInput
                     style={styles.input}
-                    placeholder="Nome do Produto"
+                    placeholder="Nome"
                     value={nome}
                     onChangeText={setNome}
                 />
 
                 <TextInput
                     style={styles.input}
-                    placeholder="Preço"
-                    value={preco}
-                    onChangeText={setPreco}
+                    placeholder="Endereço"
+                    value={endereco}
+                    onChangeText={setEndereco}
                 />
 
                 <TextInput
                     style={styles.input}
-                    placeholder="Ingrdientes"
-                    value={ingredientes}
-                    onChangeText={setIngredientes}
-                    multiline
+                    placeholder="Telefone"
+                    value={telefone}
+                    onChangeText={setTelefone}
                 />
-                <View style={styles.alinhamentoImagemSelecionada}>
-                    {imagem ? <Image source={{ uri: imagem }} style={styles.imagemSelecionada} /> : null}
-                </View>
+                
+                <TextInput
+                    style={styles.input}
+                    placeholder="E-mail"
+                    value={email}
+                    onChangeText={setEmail}
+                />
+                
+                <TextInput
+                    style={styles.input}
+                    placeholder="CPF"
+                    value={cpf}
+                    onChangeText={setCpf}
+                />
+                
+                <TextInput
+                    style={styles.input}
+                    placeholder="Senha"
+                    value={password}
+                    onChangeText={setPassword}
+                />
+                
                 <TouchableOpacity style={styles.imageButton} onPress={SelecionarImagem}>
-                    <Text style={styles.imageButtonText}>Selecionar Image</Text>
+                    <Text style={styles.imageButtonText}>Selecionar Imagem</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.imageButton} onPress={abrirCamera}>
                     <Text style={styles.imageButtonText}>Tirar Foto</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.imageButton} onPress={cadastroProduto}>
-                    <Text style={styles.imageButtonText}>Cadastrar Produto</Text>
+                <TouchableOpacity style={styles.imageButton} onPress={cadastrarCliente}>
+                    <Text style={styles.imageButtonText}>Cadastrar Cliente</Text>
                 </TouchableOpacity>
 
             </View>
-
+            
+            </ImageBackground>
+            </ScrollView>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        
     },
     header: {
-        backgroundColor: 'red',
+        
         paddingVertical: 10,
         alignItems: 'center',
     },
-    headerText: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: 'white',
-    },
     form: {
+        
         padding: 10,
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#f3f3f3',
         marginBottom: 10,
+        borderRadius: 35,
+        
     },
+    image: {
+        flex: 1,
+        justifyContent: 'center',
+      },
     input: {
+        color: 'black',
         height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
+        borderBottomWidth: 1,
         marginBottom: 10,
         paddingHorizontal: 10,
-        borderRadius: 10
+        borderRadius: 20,
+        
+    },
+    logo: {
+        borderRadius:10,
+        marginTop: 50 ,
+        marginBottom: 50,
+        width: 129,
+        height: 90
     },
     imageButton: {
-        backgroundColor: 'red',
+        backgroundColor: '#CD5942',
         padding: 10,
         borderRadius: 5,
         alignItems: 'center',
@@ -165,8 +213,10 @@ const styles = StyleSheet.create({
         width: 200,
         height: 200,
         resizeMode: 'cover',
-        borderRadius: 5,
-        marginBottom: 10
+        borderRadius: 1000,
+        marginBottom: 10,
+        borderColor: 'black',
+        borderWidth: 2,
     },
     alinhamentoImagemSelecionada: {
         alignItems: 'center'
@@ -180,7 +230,10 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontWeight: 'bold'
+    },
+    textFormulario: {
+        color: 'black'
     }
 
 });
-export default CadastroProduto
+export default CadastroCliente
