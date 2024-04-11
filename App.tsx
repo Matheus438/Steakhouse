@@ -7,11 +7,10 @@ import CadastroCliente from "./src/screens/Cadastro";
 
 function App(): React.JSX.Element {
   return (
-    /*<FlatListCardapio />*/
+    <FlatListCardapio />
       /*<Carrinho/>*/
-    /*<CadastroProduto/>*/
     /*<CadastroSteakhouse/>*/
-    <CadastroCliente/>
+    /*<CadastroCliente/>*/
   );
 }
 

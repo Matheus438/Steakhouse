@@ -25,7 +25,7 @@ const CadastroSteakhouse: React.FC = () => {
             });
 
             console.log(formData)
-            const response = await axios.post('http://10.137.11.224:8001/api/produtos', formData, {
+            const response = await axios.post('http://10.137.11.224:8000/api/produtos', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

@@ -140,6 +140,7 @@ const CadastroCliente: React.FC = () => {
                     placeholder="Senha"
                     value={password}
                     onChangeText={setPassword}
+                    secureTextEntry
                 />
                 
                 <TouchableOpacity style={styles.imageButton} onPress={SelecionarImagem}>
@@ -151,7 +152,9 @@ const CadastroCliente: React.FC = () => {
                 <TouchableOpacity style={styles.imageButton} onPress={CadastrarCliente}>
                     <Text style={styles.imageButtonText}>Cadastrar Cliente</Text>
                 </TouchableOpacity>
-
+                
+               
+                
             </View>
             
             </ImageBackground>
@@ -201,7 +204,7 @@ const styles = StyleSheet.create({
     imageButton: {
         backgroundColor: '#CD5942',
         padding: 10,
-        borderRadius: 5,
+        borderRadius: 50,
         alignItems: 'center',
         marginBottom: 10
     },
@@ -233,6 +236,11 @@ const styles = StyleSheet.create({
     },
     textFormulario: {
         color: 'black'
+    },textoLogin: {
+        textAlign: 'center'
+    },
+    textoBotaoLogin: {
+
     }
 
 });

@@ -1,7 +1,7 @@
-interface Produto {
-    id: number;
+export interface Produtos {
+    id: string
     nome: string;
-    ingredientes: string;
-    preoco: number;
+    descricao: string;
+    preco: number;
     image: any;
 }
