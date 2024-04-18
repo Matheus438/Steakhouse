@@ -9,7 +9,7 @@ const renderItem = ({ item }: { item: Produtos }) => (
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>{item.descricao}</Text>
         <Text style={styles.textItem}>---------------------------------------</Text>
-        <Text style={styles.textItem}>{item.preco}</Text>
+        <Text style={styles.textItem}>R${item.preco}</Text>
         <Image source={item.image} style={styles.image} />
         <TouchableOpacity style={styles.bottom}>
             <Text style={styles.textoBotton}>Adicionar ao Carrinho</Text>

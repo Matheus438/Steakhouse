@@ -1,8 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, Touchable, TouchableOpacity, View } from "react-native";
+import { Produtos } from "./interface/ProdutoInterface";
 
 
 function Carrinho(): React.JSX.Element {
+    const [produto, setProduto] = useState<Produto[]>([]);
+    const [erro, setErro] = useState<string>("");
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get('http://10.137.11.224:8000/api/produtos/index');
+                setProduto(response.data);
+                console.log(response.data);
+                
+            } catch (error) {
+                setErro("Ocorreu um erro");
+                console.log(error)
+            }
+        }
+        fetchData();
+    }, []);
+
     return (
        
         <View style={styles.container}>
