@@ -7,8 +7,8 @@ import CadastroCliente from "./src/screens/Cadastro";
 
 function App(): React.JSX.Element {
   return (
-    /*<FlatListCardapio />*/
-        <Carrinho/>
+    <FlatListCardapio />
+        /*<Carrinho/>*/
     /*<CadastroSteakhouse/>*/
     /*<CadastroCliente/>*/
   );

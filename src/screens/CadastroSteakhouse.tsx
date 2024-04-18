@@ -11,7 +11,7 @@ const CadastroSteakhouse: React.FC = () => {
     const [ingredientes, setIngredientes] = useState<string>('');
     const [imagem, setImagem] = useState<any>('');
     
-
+    
     const Cadastro = async () => {
         try {
             const formData = new FormData();

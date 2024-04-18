@@ -4,13 +4,14 @@ import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, Touchable, To
 import { Produtos } from "./interface/ProdutoInterface";
 
 const renderItem = ({ item }: { item: Produtos }) => (
+    
     <View style={styles.item}>
         <Text style={styles.textTitle}>{item.nome}</Text>
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>{item.descricao}</Text>
         <Text style={styles.textItem}>---------------------------------------</Text>
         <Text style={styles.textItem}>R${item.preco}</Text>
-        <Image source={item.image} style={styles.image} />
+        <Image source={item.image ? {uri:item.image}: require('./assets/images/carne1.png')}  style={styles.image} />
         <TouchableOpacity style={styles.bottom}>
             <Text style={styles.textoBotton}>Adicionar ao Carrinho</Text>
         </TouchableOpacity>
@@ -27,7 +28,7 @@ function FlatListCardapio(): React.JSX.Element {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get<Produtos>('http://10.137.11.224:8000/api/produtos/index');
+                const response = await axios.get('http://10.137.11.224:8000/api/produtos/index');
                 setProduto(response.data);
                 console.log(response.data);
                 
