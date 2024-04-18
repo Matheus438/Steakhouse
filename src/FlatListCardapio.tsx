@@ -1,8 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, Touchable, TouchableOpacity, View } from "react-native";
-import { Produtos } from "./interface/ProdutoInterface";
-
+interface Produtos {
+    id: string
+    nome: string;
+    descricao: string;
+    preco: number;
+    image: string;
+}
 const renderItem = ({ item }: { item: Produtos }) => (
     
     <View style={styles.item}>
