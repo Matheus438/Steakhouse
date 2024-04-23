@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, Touchable, TouchableOpacity, View } from "react-native";
 interface Produtos {
@@ -44,7 +45,7 @@ function FlatListCardapio(): React.JSX.Element {
         }
         fetchData();
     }, []);
-
+    const navigation = useNavigation();
     return (
 
         <View style={styles.container}>
@@ -73,12 +74,12 @@ function FlatListCardapio(): React.JSX.Element {
                         source={require('./assets/images/home.png')}
                         style={styles.footerIcon} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('FlatListCardapio')}>
                     <Image
                         source={require('./assets/images/orders.png')}
                         style={styles.footerIcon} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('CadastroSteakhouse')}>
                     <Image
                         source={require('./assets/images/profile.png')}
                         style={styles.footerIcon} />
